@@ -2,13 +2,14 @@ import React, {useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
 import axios from "axios";
 import Cookies from "universal-cookie";
-const cookies = new Cookies();
+
 
 export default function Login() {
+  
   //To do this, you need to create a new component that will help to check if a certain condition has been met before allowing a user to access that route.
   //The condition you will be using in this case is the token generated during login. So before you create this ProtectedRoute component, let's go get the token from the Login component and make it available in all parts of the application.
   //Install universal-cookie. This is a cookie package that helps us share a value or variable across the application:
-
+  const cookies = new Cookies();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);

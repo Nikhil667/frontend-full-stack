@@ -22,7 +22,7 @@ export default function AuthComponent() {
       .catch((error) => {
         error = new Error()
       })
-  }, [])
+  }, [token])
 
   const logout = () => {
     cookies.remove("TOKEN", { path: "/" })

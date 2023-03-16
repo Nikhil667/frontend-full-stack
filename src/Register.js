@@ -14,7 +14,8 @@ export default function Register() {
     //alert("working")
     const configuration = {
       method: "post",
-      url: "https://full-stack-auth.onrender.com/register",
+      //url: "https://full-stack-auth.onrender.com/register",
+      url: "http://localhost:4000/register",
       data: {
         email,
         password,

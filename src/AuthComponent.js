@@ -10,7 +10,8 @@ export default function AuthComponent() {
   useEffect(() => {
     const configuration = {
       method: "get",
-      url: "https://full-stack-auth.onrender.com/auth-endpoint",
+      //url: "https://full-stack-auth.onrender.com/auth-endpoint",
+      url: "http://localhost:4000/auth-endpoint",
       headers: {
         Authorization: `Bearer ${token}`,
       }

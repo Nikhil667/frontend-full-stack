@@ -8,7 +8,8 @@ export default function FreeComponent() {
   useEffect(() => {
     const configuration = {
       method: "get",
-      url: "https://full-stack-auth.onrender.com/free-endpoint"
+      //url: "https://full-stack-auth.onrender.com/free-endpoint"
+      url: "http://localhost:4000/free-endpoint"
     }
     axios(configuration)
       .then((result) => {

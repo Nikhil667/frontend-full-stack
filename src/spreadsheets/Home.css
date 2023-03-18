@@ -1,0 +1,22 @@
+section{
+    height: 100dvh;
+}
+
+.customBackGround{
+    background-image: url("../assets/bg-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    border-bottom: 5px dashed black;
+}
+
+.hero-heading{
+    font-size: 4rem;
+}
+
+.hero-heading::after{
+    content: "as";
+    height: 5px;
+    background-color: black;
+    
+}

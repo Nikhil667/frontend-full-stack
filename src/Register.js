@@ -8,7 +8,6 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [register, setRegister] = useState(false);
 
-
   function handleSubmit(e){
     e.preventDefault();
     //alert("working")
@@ -18,27 +17,27 @@ export default function Register() {
       url: "http://localhost:4000/register",
       data: {
         email,
-        password,
+        password
       },
     };
     // make the API call
     axios(configuration)
       .then((result) => {
         setRegister(true);
+        setEmail("")
+        setPassword("")
+        window.location.href = "/login";
       })
       .catch((error) => {
         error = new Error();
-      });
-    
+      });  
   }
-  
-
   return (
     <>
       <h2>Register</h2>
       <Form onSubmit={(e) => handleSubmit(e)}>
         {/* email */}
-        <Form.Group controlId="formBasicEmail">
+        <Form.Group controlId="formEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control 
             type="email" 
@@ -50,7 +49,7 @@ export default function Register() {
         </Form.Group>
 
         {/* password */}
-        <Form.Group controlId="formBasicPassword">
+        <Form.Group controlId="formPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control 
             type="password"
@@ -65,7 +64,7 @@ export default function Register() {
         <Button 
           variant="primary" 
           type="submit"
-          onClick={(e) => handleSubmit(e)}
+          onSubmit={(e) => handleSubmit(e)}
         >
           Register
         </Button>

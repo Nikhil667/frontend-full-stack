@@ -3,8 +3,7 @@ import {Form, Button} from 'react-bootstrap'
 import axios from "axios";
 import Cookies from "universal-cookie";
 
-
-export default function Login() {
+export default function Login({ setLoginCheck, loginCheck}) {
   
   //To do this, you need to create a new component that will help to check if a certain condition has been met before allowing a user to access that route.
   //The condition you will be using in this case is the token generated during login. So before you create this ProtectedRoute component, let's go get the token from the Login component and make it available in all parts of the application.
@@ -12,7 +11,7 @@ export default function Login() {
   const cookies = new Cookies();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [login, setLogin] = useState(false);
+  
   function handleSubmit(e){
     e.preventDefault();
     //alert("working")
@@ -27,17 +26,27 @@ export default function Login() {
     };
     // make the API call
     axios(configuration)
-      .then((result) => {
-        setLogin(true);
+      .then((result) => { 
         cookies.set("TOKEN", result.data.token, {
           path: "/",
         });
+        localStorage.setItem(("PODIA"), JSON.stringify(result.data))
+        setLoginCheck(true);
         // window.location.href = "/auth";
       })
       .catch((error) => {
         error = new Error();
       });
   }
+
+  // useEffect(() => {
+  //   const loggedInUser = localStorage.getItem("PODIA");
+  //   if (loggedInUser) {
+  //     const foundUser = JSON.parse(loggedInUser);
+  //     setLoginCheck(true);
+  //     setProfile(foundUser);
+  //   }
+  // }, [loginCheck, setLoginCheck, setProfile]);
 
   return (
     <>
@@ -71,13 +80,14 @@ export default function Login() {
         <Button 
           variant="primary" 
           type="submit"
-          onClick={(e) => handleSubmit(e)}
+          onSubmit={(e) => handleSubmit(e)}
+          disabled={loginCheck}
         >
           Login
         </Button>
       </Form>
       {/* display success message */}
-      {login ? (
+      {loginCheck ? (
           <h2 className="text-success">You Are Logged In Successfully</h2>
         ) : (
           <h2 className="text-danger">You Are Not Logged In</h2>

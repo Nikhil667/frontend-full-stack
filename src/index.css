@@ -12,6 +12,14 @@ code {
     monospace;
 } */
 
+*,*::after,*::before{
+  box-sizing: border-box;
+}
+
+body{
+  scroll-behavior: smooth;
+}
+
 #navigation{
   margin-top: 5%;
   margin-bottom: 5%;

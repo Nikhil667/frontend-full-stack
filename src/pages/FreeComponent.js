@@ -1,5 +1,8 @@
 import axios from 'axios'
 import React, {useEffect, useState} from 'react'
+import { Container, Row, Col } from 'react-bootstrap';
+import CardItems from '../components/CardItems';
+import { productsArray } from '../data/products'
 
 export default function FreeComponent() {
 
@@ -26,6 +29,17 @@ export default function FreeComponent() {
 
     {/* displaying our message from our API call */}
     <h3 className="text-center text-danger">{message}</h3>
+
+    <Container>
+    <h1>Store</h1>
+      <Row md={2} xs={1} lg={3} className="g-3">
+        {productsArray.map(item => (
+          <Col key={item.id}>
+            <CardItems {...item} />
+          </Col>
+        ))}
+      </Row>
+      </Container>
   </div>
   )
 }

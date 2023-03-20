@@ -10,9 +10,11 @@ export default function Account() {
         <section className="customBackGround d-flex align-items-center pb-5">
           <Container>
             <Stack gap={4}>
+              <div>
               <h1 className="hero-heading">
               Shop the Future Today
               </h1>
+              </div>
               <p className="fs-4 w-75">
               Explore the latest and greatest tech gadgets on our one-stop e-commerce destination.
               </p>
@@ -26,9 +28,6 @@ export default function Account() {
               </div>
             </Stack>
           </Container>
-        </section>
-        <section>
-          
         </section>
       </div>
     </>

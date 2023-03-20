@@ -31,10 +31,10 @@ export default function FreeComponent() {
     <h3 className="text-center text-danger">{message}</h3>
 
     <Container>
-    <h1>Store</h1>
-      <Row md={2} xs={1} lg={3} className="g-3">
-        {productsArray.map(item => (
-          <Col key={item.id}>
+    {/* <h2 className='text-center mt-5'>Store</h2> */}
+      <Row md={2} xs={1} lg={3} className="g-4 p-3">
+        {productsArray.map((item, index) => (
+          <Col key={index}>
             <CardItems {...item} />
           </Col>
         ))}

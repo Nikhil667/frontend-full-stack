@@ -3,20 +3,19 @@ section{
 }
 
 .customBackGround{
-    background-image: url("../assets/bg-1.jpg");
+    background: url("../assets/bg-1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    
     border-bottom: 5px dashed black;
 }
 
 .hero-heading{
     font-size: 4rem;
+    position: relative;
 }
 
-.hero-heading::after{
-    content: "as";
-    height: 5px;
-    background-color: black;
-    
+.hero-heading:after{
+    content: url("../assets/cord.svg");
+    position: absolute;
+    bottom: 0.55em;
 }

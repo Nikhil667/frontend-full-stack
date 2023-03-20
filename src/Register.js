@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Form, Button} from 'react-bootstrap'
+import {Form, Button, Container} from 'react-bootstrap'
 import axios from "axios";
 
 export default function Register() {
@@ -33,9 +33,14 @@ export default function Register() {
       });  
   }
   return (
-    <>
+    <Container 
+      style={{ height: "100dvh"}} 
+      className="d-flex align-items-center justify-content-center flex-column">
       <h2>Register</h2>
-      <Form onSubmit={(e) => handleSubmit(e)}>
+      <Form 
+       className='w-75 p-4 mt-2'
+       style={{ border: "1px solid lightGrey", borderRadius: "8px" }}
+       onSubmit={(e) => handleSubmit(e)}>
         {/* email */}
         <Form.Group controlId="formEmail">
           <Form.Label>Email address</Form.Label>
@@ -44,7 +49,6 @@ export default function Register() {
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter email" 
           />
         </Form.Group>
 
@@ -56,7 +60,6 @@ export default function Register() {
             name="password"
             value={password} 
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
           />
         </Form.Group>
 
@@ -65,16 +68,17 @@ export default function Register() {
           variant="primary" 
           type="submit"
           onSubmit={(e) => handleSubmit(e)}
+          className="mt-3 w-100"
         >
           Register
         </Button>
       </Form>
       {/* display success message */}
       {register ? (
-          <h2 className="text-success">You Are Registered Successfully</h2>
+          <p className="text-success text-center text-success">You Are Registered Successfully</p>
         ) : (
-          <h2 className="text-danger">You Are Not Registered</h2>
+          <p className="text-success text-center text-danger">You Are Not Registered</p>
         )}
-    </>
+    </Container>
   );
 }

@@ -3,7 +3,6 @@ import { useUserInfo } from "../context/UserContext"
 import Login from "../Login"
 import { useNavigate } from "react-router-dom"
 
-
 export default function Sidebar({ isOpen, setIsOpen, loginCheck, setLoginCheck }) {
 
     const { closeSidebar, googleLogIn } = useUserInfo()
@@ -23,16 +22,20 @@ export default function Sidebar({ isOpen, setIsOpen, loginCheck, setLoginCheck }
               googleLogIn()
               handleClose()
               }}>Sign in with Google 🚀 </Button>
-            <h2>OR</h2>
+            <p className="fs-4 m-0 text-center">OR</p>
             <Login loginCheck={loginCheck} setLoginCheck={setLoginCheck}/>
+            <div>
+            <p className="text-center">Don't have an account</p>
             <Button
+              className=" w-100"
               onClick={() => {
                 navigate("/register");
                 handleClose();
               }}
-            >
-              Register
+              >
+              Create Account
             </Button> 
+            </div>
             {/* <Nav.Link to="/register" as={NavLink}>register</Nav.Link> */}
           </Stack>
         </Offcanvas.Body>

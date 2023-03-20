@@ -5,7 +5,7 @@ import axios from 'axios';
 import NavbarMain from "../components/NavbarMain";
 import Cookies from "universal-cookie";
 
-const UserContext = createContext();
+const UserContext = createContext({});
 
 export function useUserInfo(){
     return useContext(UserContext)

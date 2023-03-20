@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Form, Button} from 'react-bootstrap'
+import {Form, Button, Container} from 'react-bootstrap'
 import axios from "axios";
 import Cookies from "universal-cookie";
 
@@ -49,9 +49,12 @@ export default function Login({ setLoginCheck, loginCheck}) {
   // }, [loginCheck, setLoginCheck, setProfile]);
 
   return (
-    <>
-      <h2>Login</h2>
-      <Form onSubmit={(e) => handleSubmit(e)}>
+    <Container className="d-flex align-items-center justify-content-center flex-column mt-2">
+      <h2 className='text-center'>Login</h2>
+      <Form 
+          className='w-75 p-4 mt-2'
+          style={{ border: "1px solid lightGrey", borderRadius: "8px" }}
+          onSubmit={(e) => handleSubmit(e)}>
         {/* email */}
         <Form.Group controlId="formEmail">
           <Form.Label>Email address</Form.Label>
@@ -60,7 +63,6 @@ export default function Login({ setLoginCheck, loginCheck}) {
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter email" 
           />
         </Form.Group>
 
@@ -72,7 +74,6 @@ export default function Login({ setLoginCheck, loginCheck}) {
             name="password"
             value={password} 
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
           />
         </Form.Group>
 
@@ -82,16 +83,17 @@ export default function Login({ setLoginCheck, loginCheck}) {
           type="submit"
           onSubmit={(e) => handleSubmit(e)}
           disabled={loginCheck}
+          className="mt-3 w-100"
         >
           Login
         </Button>
       </Form>
       {/* display success message */}
       {loginCheck ? (
-          <h2 className="text-success">You Are Logged In Successfully</h2>
+          <p className="text-success text-center text-success">You Are Logged In Successfully</p>
         ) : (
-          <h2 className="text-danger">You Are Not Logged In</h2>
+          <p className="text-danger text-center text-danger">You Are Not Logged In</p>
         )}
-    </>
+    </Container>
   );
 }

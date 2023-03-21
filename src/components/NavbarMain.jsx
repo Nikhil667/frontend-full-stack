@@ -75,18 +75,19 @@ return (
                 height: "3rem",
                 position: "relative",
                 cursor: "pointer",
+                marginRight: "0.5em"
               }}
               className="rounded-circle"
               alt="/"
             ></img>
-            {!loginCheck ? "" : <Button onClick={googleLogOut}>Log Out</Button>}
+            {!loginCheck ? "" : <Button style={{ marginRight: "1em" }} onClick={googleLogOut}>Log Out</Button>}
           </Nav>
         </Navbar.Collapse>
         {productsCount > 0 && (
           <Button
             onClick={handleShow}
             style={{ width: "3rem", height: "3rem", position: "relative", marginRight: "1em" }}
-            variant="outline-primary"
+            variant="outline-warning"
             className="rounded-circle"
           >
             <svg

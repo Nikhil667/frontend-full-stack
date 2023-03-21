@@ -88,6 +88,7 @@ export function CartProvider({children}){
     function getTotalCost(){
         let totalCost = 0;
 
+        // eslint-disable-next-line array-callback-return
         cartProducts.map((item) => {
             const productData = getProductData(item.id);
             totalCost +=( productData.price * item.quantity);

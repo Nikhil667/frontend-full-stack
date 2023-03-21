@@ -17,8 +17,8 @@ export default function Login({ setLoginCheck, loginCheck}) {
     //alert("working")
     const configuration = {
       method: "post",
-      //url: "https://full-stack-auth.onrender.com/login",
-      url: "http://localhost:4000/login",
+      url: "https://full-stack-auth.onrender.com/login",
+      //url: "http://localhost:4000/login",
       data: {
         email,
         password,

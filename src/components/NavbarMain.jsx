@@ -17,7 +17,8 @@ export default function NavbarMain({ loginCheck, profile }) {
   const handleShow = () => setShow(true)
 
   const checkOut = async () => {
-    await fetch('http://localhost:4000/checkout', {
+    await fetch('https://full-stack-auth.onrender.com/checkout', {
+    //await fetch('http://localhost:4000/checkout', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'

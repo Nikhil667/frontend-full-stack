@@ -18,7 +18,7 @@ export default function Sidebar({ isOpen, setIsOpen, loginCheck, setLoginCheck }
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Stack gap={3}>
-            <Button disabled={loginCheck} onClick={() => {
+            <Button disabled={true} onClick={() => {
               googleLogIn()
               handleClose()
               }}>Sign in with Google 🚀 </Button>

@@ -3,7 +3,7 @@ section{
 }
 
 .customBackGround{
-    background: url("../assets/bg-1.jpg");
+    background: url("../assets/bg-2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom: 5px dashed black;
@@ -18,4 +18,17 @@ section{
     content: url("../assets/cord.svg");
     position: absolute;
     bottom: 0.55em;
+}
+
+.blur{
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    background-color: rgba(64, 66, 69, 0.75);
+    border-radius: 8px;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

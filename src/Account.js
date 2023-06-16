@@ -9,20 +9,20 @@ export default function Account() {
       <div className="wrapper">
         <section className="customBackGround d-flex align-items-center pb-5">
           <Container>
-            <Stack gap={4}>
+            <Stack className="flex blur text-white p-5">
               <div>
               <h1 className="hero-heading">
               Shop the Future Today
               </h1>
               </div>
-              <p className="fs-4 w-75">
+              <p className="fs-4">
               Explore the latest and greatest tech gadgets on our one-stop e-commerce destination.
               </p>
-              <div className="d-flex gap-3 w-75 align-items-center">
-                <Link to="/free" className="btn btn-dark w-50 p-2 fs-4" >
+              <div className="d-flex gap-3 w-75 align-items-center ">
+                <Link to="/free" className="btn btn-light w-50 p-2 fs-4" >
                   Store
                 </Link>
-                <Link to="/register" className="btn btn-outline-dark w-50 fs-4" >
+                <Link to="/register" className="btn btn-outline-light w-50 fs-4" >
                   Register
                 </Link>
               </div>

@@ -1,16 +1,15 @@
 section{
-    height: 100dvh;
+    height: 100vh;
 }
 
 .customBackGround{
     background: url("../assets/bg-2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    border-bottom: 5px dashed black;
 }
 
 .hero-heading{
-    font-size: 4rem;
+    font-size: clamp(2.2rem, 4vw, 4rem);
     position: relative;
 }
 
@@ -23,7 +22,7 @@ section{
 .blur{
     backdrop-filter: blur(10px) saturate(180%);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
-    background-color: rgba(64, 66, 69, 0.75);
+    background-color: rgba(125, 125, 125, 0.75);
     border-radius: 8px;
 }
 

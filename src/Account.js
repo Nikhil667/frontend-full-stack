@@ -11,18 +11,18 @@ export default function Account() {
           <Container>
             <Stack className="flex blur text-white p-5">
               <div>
-              <h1 className="hero-heading">
+              <h1 className="hero-heading text-center">
               Shop the Future Today
               </h1>
               </div>
-              <p className="fs-4">
+              <p className="fs-4 text-center">
               Explore the latest and greatest tech gadgets on our one-stop e-commerce destination.
               </p>
-              <div className="d-flex gap-3 w-75 align-items-center ">
-                <Link to="/free" className="btn btn-light w-50 p-2 fs-4" >
+              <div className="d-flex gap-3 w-100 align-items-center ">
+                <Link to="/free" className="btn btn-dark w-100 p-2 fs-4" >
                   Store
                 </Link>
-                <Link to="/register" className="btn btn-outline-light w-50 fs-4" >
+                <Link to="/register" className="btn btn-outline-light w-100 fs-4" >
                   Register
                 </Link>
               </div>

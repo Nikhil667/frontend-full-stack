@@ -24,7 +24,7 @@ export default function FreeComponent() {
   }, [])
 
   return (
-    <div>
+    <div style={{backgroundColor: "#ccc"}}>
     <h1 className="text-center">Store</h1> 
     {/* Free Component */}
 
@@ -33,7 +33,7 @@ export default function FreeComponent() {
 
     <Container>
     {/* <h2 className='text-center mt-5'>Store</h2> */}
-      <Row md={2} xs={1} lg={3} className="g-4 p-3">
+      <Row md={3} xs={1} lg={4} className="g-4 p-3">
         {productsArray.map((item, index) => (
           <Col key={index}>
             <CardItems {...item} />
